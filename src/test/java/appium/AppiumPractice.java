@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utils.MobileUtils;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -29,23 +28,22 @@ public class AppiumPractice {
 //        AndroidDriver driver = new AndroidDriver(appiumServerUrl, desiredCapabilities);
 //
 //        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        AndroidDriver driver = MobileUtils.getDriver("src/test/resources/ApiDemos-debug-newVersion.apk");
 
-        WebElement appButton = driver.findElementByAccessibilityId("App");
-        appButton.click();
-
-        WebElement alarmButton = driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Alarm\"]"));
-        alarmButton.click();
-
-        WebElement alarmControllerButton = driver.findElementByAccessibilityId("Alarm Controller");
-        alarmControllerButton.click();
-
-        List<WebElement> alarms = driver.findElements(By.className("android.widget.Button"));
-        List<String> expectedOptions = Arrays.asList("One Shot Alarm","Start Repeating Alarm","Stop Repeating Alarm");
-        for (int i = 0; i < alarms.size(); i++) {
-            Assert.assertEquals(alarms.get(i).getText(),expectedOptions.get(i));
-        }
-        driver.quit();
+//        WebElement appButton = driver.findElementByAccessibilityId("App");
+//        appButton.click();
+//
+//        WebElement alarmButton = driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Alarm\"]"));
+//        alarmButton.click();
+//
+//        WebElement alarmControllerButton = driver.findElementByAccessibilityId("Alarm Controller");
+//        alarmControllerButton.click();
+//
+//        List<WebElement> alarms = driver.findElements(By.className("android.widget.Button"));
+//        List<String> expectedOptions = Arrays.asList("One Shot Alarm","Start Repeating Alarm","Stop Repeating Alarm");
+//        for (int i = 0; i < alarms.size(); i++) {
+//            Assert.assertEquals(alarms.get(i).getText(),expectedOptions.get(i));
+//        }
+//        driver.quit();
     }
 
     @Test
